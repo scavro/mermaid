@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="260" viewBox="0 0 700 260">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+    </marker>
+    <style>
+      .node { fill:#f8f9fa; stroke:#333; stroke-width:2; rx:8; }
+      .label { font:14px/1.2 Arial, Helvetica, sans-serif; fill:#111; }
+      .decision { fill:#fff9c4; stroke:#333; stroke-width:2; }
+      .edge { stroke:#333; stroke-width:2; fill:none; marker-end:url(#arrow); }
+      .edgelabel { font:12px Arial, Helvetica, sans-serif; fill:#111; }
+    </style>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="A">
+    <rect class="node" x="20" y="40" width="160" height="50" rx="8"/>
+    <text class="label" x="100" y="72" text-anchor="middle">Christmas</text>
+  </g>
+
+  <g id="B">
+    <rect class="node" x="240" y="40" width="160" height="50" rx="8"/>
+    <text class="label" x="320" y="72" text-anchor="middle">Go shopping</text>
+  </g>
+
+  <!-- Decision diamond C -->
+  <g id="C" transform="translate(520,65)">
+    <polygon class="decision" points="0,-40 50,0 0,40 -50,0" />
+    <text class="label" x="0" y="6" text-anchor="middle">Let me think</text>
+  </g>
+
+  <!-- Output nodes -->
+  <g id="D">
+    <rect class="node" x="200" y="150" width="120" height="40" rx="6"/>
+    <text class="label" x="260" y="178" text-anchor="middle">Laptop</text>
+  </g>
+
+  <g id="E">
+    <rect class="node" x="340" y="150" width="120" height="40" rx="6"/>
+    <text class="label" x="400" y="178" text-anchor="middle">iPhone</text>
+  </g>
+
+  <g id="F">
+    <rect class="node" x="480" y="150" width="120" height="40" rx="6"/>
+    <text class="label" x="540" y="178" text-anchor="middle">Car</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- A -> B -->
+  <path class="edge" d="M180 65 L240 65" />
+  <text class="edgelabel" x="210" y="55" text-anchor="middle">Get money</text>
+
+  <!-- B -> C -->
+  <path class="edge" d="M400 65 L470 65" />
+
+  <!-- C -> D (One) -->
+  <path class="edge" d="M515 25 C 480 40, 360 120, 260 170" />
+  <text class="edgelabel" x="380" y="95" text-anchor="middle">One</text>
+
+  <!-- C -> E (Two) -->
+  <path class="edge" d="M540 85 C 520 110, 440 150, 400 170" />
+  <text class="edgelabel" x="470" y="130" text-anchor="middle">Two</text>
+
+  <!-- C -> F (Three) -->
+  <path class="edge" d="M545 85 L 600 150" />
+  <text class="edgelabel" x="580" y="120" text-anchor="middle">Three</text>
+
+  <!-- Invisible short paths to apply arrowheads where needed -->
+  <path d="M180 65 L240 65" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M400 65 L470 65" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M515 25 C 480 40, 360 120, 260 170" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M540 85 C 520 110, 440 150, 400 170" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M545 85 L 600 150" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+
+</svg>
