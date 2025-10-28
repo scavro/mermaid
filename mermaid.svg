@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="260" viewBox="0 0 760 260">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+    </marker>
+    <style>
+      .node { fill:#f8f9fa; stroke:#333; stroke-width:2; rx:6; }
+      .label { font: 14px Arial, Helvetica, sans-serif; fill:#111; }
+      .decision { fill:#fff9c4; stroke:#333; stroke-width:2; }
+      .edge { stroke:#333; stroke-width:2; fill:none; marker-end:url(#arrow); }
+      .edgelabel { font:12px Arial, Helvetica, sans-serif; fill:#111; }
+    </style>
+  </defs>
+
+  <!-- Nodes -->
+  <rect class="node" x="20" y="30" width="160" height="50" rx="8"/>
+  <text class="label" x="100" y="62" text-anchor="middle">Christmas</text>
+
+  <rect class="node" x="220" y="30" width="160" height="50" rx="8"/>
+  <text class="label" x="300" y="62" text-anchor="middle">Go shopping</text>
+
+  <!-- Decision diamond -->
+  <g transform="translate(520,55)">
+    <polygon class="decision" points="0,-40 50,0 0,40 -50,0" />
+    <text class="label" x="0" y="4" text-anchor="middle">Let me think</text>
+  </g>
+
+  <!-- Output nodes -->
+  <rect class="node" x="260" y="140" width="120" height="40" rx="6"/>
+  <text class="label" x="320" y="167" text-anchor="middle">Laptop</text>
+
+  <rect class="node" x="400" y="140" width="120" height="40" rx="6"/>
+  <text class="label" x="460" y="167" text-anchor="middle">iPhone</text>
+
+  <rect class="node" x="540" y="140" width="120" height="40" rx="6"/>
+  <text class="label" x="600" y="167" text-anchor="middle">Car</text>
+
+  <!-- Edges -->
+  <path class="edge" d="M180,55 L220,55" />
+  <text class="edgelabel" x="200" y="45" text-anchor="middle">Get money</text>
+
+  <path class="edge" d="M380,55 L220,55" marker-end="url(#arrow)" />
+  <!-- from Go shopping to decision -->
+  <path class="edge" d="M380,55 L470,55" />
+
+  <!-- decision to outputs -->
+  <path class="edge" d="M520,15 L320,160" />
+  <text class="edgelabel" x="420" y="90" text-anchor="middle">One</text>
+
+  <path class="edge" d="M570,95 L460,160" />
+  <text class="edgelabel" x="515" y="120" text-anchor="middle">Two</text>
+
+  <path class="edge" d="M600,95 L600,160" />
+  <text class="edgelabel" x="600" y="120" text-anchor="middle">Three</text>
+
+  <!-- Add arrowheads by drawing invisible paths with marker-end for those lines that need arrowheads -->
+  <path d="M180,55 L220,55" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M380,55 L470,55" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M520,15 L320,160" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M570,95 L460,160" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+  <path d="M600,95 L600,160" stroke="transparent" fill="none" marker-end="url(#arrow)" />
+
+</svg>
